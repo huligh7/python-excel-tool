@@ -11,6 +11,12 @@ python tool for office
    有相同的值会被匹配出来
    可以选择一个其他列的数据
    文件A
+   a	b	c	d	e	f	g
+   1	2	3	4	5	6	7
+   4	2	6	6	6	6	6
+   7	5	8	6	6	3	6
+![image](https://user-images.githubusercontent.com/121083401/208793977-91a499d8-9c07-4103-83f7-1403a83b5686.png)
+
    a b c d e f g
    1 2 3 4 5 6 7
    4 2 6 6 6 6 6
