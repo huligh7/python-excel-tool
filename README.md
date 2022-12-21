@@ -11,23 +11,14 @@ python tool for office
    有相同的值会被匹配出来
    可以选择一个其他列的数据
    文件A
-   a	b	c	d	e	f	g
-   1	2	3	4	5	6	7
-   4	2	6	6	6	6	6
-   7	5	8	6	6	3	6
+
 ![image](https://user-images.githubusercontent.com/121083401/208793977-91a499d8-9c07-4103-83f7-1403a83b5686.png)
 
-   a b c d e f g
-   1 2 3 4 5 6 7
-   4 2 6 6 6 6 6
-   7 5 8 6 6 3 6
+
    文件B
-   gg bb ee dd ae ff go
-   5   2  3  6  9  1  3
-   4   6  6  7  2  8  4
-   1   2  3  4  5  6  7
-   5   6  4  2  4  1  8
-   7   2  3  6  9  10 5
+
+![image](https://user-images.githubusercontent.com/121083401/208794263-ca20ba1a-3042-412f-aba1-29093f9ee06a.png)
+
    打开两个文件
      选择两个需要匹配的列比如上面的A文件的c列和B文件的go列
      得到：
