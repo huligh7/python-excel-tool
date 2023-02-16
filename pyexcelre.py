@@ -25,8 +25,10 @@ class GUI:
         self.FileAddButton=ttk.Button(text="合并为多sheet",command=self.sheetAdd)
         self.FileAddButton.place(x=126,y=45)
         self.FileAddButton=ttk.Button(text="多表格交集匹配",command=self.sheetMerge)
-        self.FileAddButton.place(x=232,y=45)                
-        self.PathText=ttk.Text(bg='lightblue',fg='chocolate',relief='sunken',bd=3,height=16,width=57,padx=1,pady=1,state='normal',cursor='arrow',font=('黑体', 9),wrap='char') 
+        self.FileAddButton.place(x=232,y=45)
+        self.FileAddButton=ttk.Button(text="拆分sheet为单个文件",command=self.Table_sheet_split)
+        self.FileAddButton.place(x=350,y=45)         
+        self.PathText=ttk.Text(bg='lightblue',fg='chocolate',relief='sunken',bd=3,height=16,width=75,padx=1,pady=1,state='normal',cursor='arrow',font=('黑体', 9),wrap='char') 
         self.PathText.place(x=20,y=80)
     def filePath(self):
         self.PathText.delete(0.0, 'end')
@@ -87,14 +89,24 @@ class GUI:
             self.outData.to_excel(writer,index=False)             
             tk.messagebox.showinfo('完成','合并完成')
         else :
-             tk.messagebox.showerror('错误','请选择文文件或文件储存目录')              
+             tk.messagebox.showerror('错误','请选择文文件或文件储存目录') 
+    def Table_sheet_split(self):        
+        if self.filePaths!=None and self.filePaths!=None :
+            for i in range(len(self.filePaths)):
+                a=pd.read_excel(self.filePaths[i],sheet_name=None,dtype=str)
+                for key in a:
+                    exec("a[key].to_excel(self.fileSavePath+\"/\"+\"{}.xlsx\",index=False)".format(key))
+            tk.messagebox.showinfo('完成','文件保存到当前目录')
+        else :
+            tk.messagebox.showerror('错误','请选择文文件或文件储存目录')
+                        
 if __name__ == "__main__":
     root = Tk()
     root.title("excel文件合并")
 
     frame = Frame(root)
 
-    root.geometry("400x320")
+    root.geometry("500x320")
     app = GUI(frame)
 
     root.mainloop()  
