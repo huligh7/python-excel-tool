@@ -96,7 +96,7 @@ class GUI:
                 a=pd.read_excel(self.filePaths[i],sheet_name=None,dtype=str)
                 for key in a:
                     exec("a[key].to_excel(self.fileSavePath+\"/\"+\"{}.xlsx\",index=False)".format(key))
-            tk.messagebox.showinfo('完成','文件保存到当前目录')
+            tk.messagebox.showinfo('完成','任务完成')
         else :
             tk.messagebox.showerror('错误','请选择文文件或文件储存目录')
                         
