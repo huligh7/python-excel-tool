@@ -58,7 +58,7 @@ class GUI:
             writer.save()
             tk.messagebox.showinfo('完成','合并完成')
         else :
-             tk.messagebox.showerror('错误','请选择文文件或文件储存目录')
+             tk.messagebox.showerror('错误','请选择文件或文件储存目录')
     def sheetAdd(self):
         if self.filePaths!=None and self.fileSavePath!=None :
             frames = []
@@ -74,7 +74,7 @@ class GUI:
             tk.messagebox.showinfo('完成','合并完成')
             writer.save()
         else :
-             tk.messagebox.showerror('错误','请选择文文件或文件储存目录')
+             tk.messagebox.showerror('错误','请选择文件或文件储存目录')
     def sheetMerge(self):
         self.tableCol = tkinter.simpledialog.askstring(title = '信息',prompt='请输入匹配字段名：',initialvalue = None)
         if self.filePaths!=None and self.fileSavePath!=None :
@@ -89,7 +89,7 @@ class GUI:
             self.outData.to_excel(writer,index=False)             
             tk.messagebox.showinfo('完成','合并完成')
         else :
-             tk.messagebox.showerror('错误','请选择文文件或文件储存目录') 
+             tk.messagebox.showerror('错误','请选择文件或文件储存目录') 
     def Table_sheet_split(self):        
         if self.filePaths!=None and self.filePaths!=None :
             for i in range(len(self.filePaths)):
@@ -98,11 +98,11 @@ class GUI:
                     exec("a[key].to_excel(self.fileSavePath+\"/\"+\"{}.xlsx\",index=False)".format(key))
             tk.messagebox.showinfo('完成','任务完成')
         else :
-            tk.messagebox.showerror('错误','请选择文文件或文件储存目录')
+            tk.messagebox.showerror('错误','请选择文件或文件储存目录')
                         
 if __name__ == "__main__":
     root = Tk()
-    root.title("excel文件合并")
+    root.title("excel小工具")
 
     frame = Frame(root)
 
